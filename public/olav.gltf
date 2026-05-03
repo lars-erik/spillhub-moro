@@ -1,0 +1,134 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "gltfpack 0.23"
+  },
+  "extensionsUsed": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression"
+  ],
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression"
+  ],
+  "buffers": [
+    {
+      "uri": "olav_data.bin",
+      "byteLength": 27700
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 27700,
+      "byteStride": 12,
+      "target": 34962,
+      "extensions": {
+        "EXT_meshopt_compression": {
+          "buffer": 0,
+          "byteOffset": 0,
+          "byteLength": 14118,
+          "byteStride": 12,
+          "mode": "ATTRIBUTES",
+          "filter": "EXPONENTIAL",
+          "count": 2491
+        }
+      }
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 27700,
+      "byteLength": 0,
+      "byteStride": 4,
+      "target": 34962,
+      "extensions": {
+        "EXT_meshopt_compression": {
+          "buffer": 0,
+          "byteOffset": 14120,
+          "byteLength": 7609,
+          "byteStride": 4,
+          "mode": "ATTRIBUTES",
+          "count": 2491
+        }
+      }
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 27700,
+      "byteLength": 0,
+      "target": 34963,
+      "extensions": {
+        "EXT_meshopt_compression": {
+          "buffer": 0,
+          "byteOffset": 21732,
+          "byteLength": 5966,
+          "byteStride": 2,
+          "mode": "TRIANGLES",
+          "count": 14766
+        }
+      }
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "count": 2491,
+      "type": "VEC3",
+      "min": [
+        -0.499023438,
+        -0.448242188,
+        -0.493164062
+      ],
+      "max": [
+        0.499023438,
+        0.448242188,
+        0.493164062
+      ]
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5120,
+      "count": 2491,
+      "type": "VEC3",
+      "normalized": true
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 0,
+      "componentType": 5123,
+      "count": 14766,
+      "type": "SCALAR"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "tripo_node_80f62506-36b6-4337-b532-70b0a0eddb86",
+      "mesh": 0
+    }
+  ],
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0
+}
