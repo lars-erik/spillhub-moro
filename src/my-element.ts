@@ -31,7 +31,7 @@ export class MyElement extends LitElement {
     const scene = new THREE.Scene()
     const pmrem = new THREE.PMREMGenerator(renderer)
     pmrem.compileEquirectangularShader()
-    new EXRLoader().load('/little_paris_eiffel_tower_1k.exr', (texture) => {
+    new EXRLoader().load('little_paris_eiffel_tower_1k.exr', (texture) => {
       const envMap = pmrem.fromEquirectangular(texture).texture
       scene.environment = envMap
       scene.background = new THREE.Color(0x222222)
@@ -45,7 +45,7 @@ export class MyElement extends LitElement {
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enableDamping = true
 
-    new FontLoader().load('/Science%20Gothic%20SemiBold_Regular.json', (font) => {
+    new FontLoader().load('Science%20Gothic%20SemiBold_Regular.json', (font) => {
       const geo = new TextGeometry('spillhub', {
         font,
         size: 0.18,
@@ -65,7 +65,7 @@ export class MyElement extends LitElement {
     await MeshoptDecoder.ready
     const loader = new GLTFLoader()
     loader.setMeshoptDecoder(MeshoptDecoder)
-    loader.load('/olav.glb', (gltf) => {
+    loader.load('olav.glb', (gltf) => {
       gltf.scene.traverse((child) => {
         if ((child as THREE.Mesh).isMesh)
           (child as THREE.Mesh).material = new THREE.MeshStandardMaterial({ metalness: 1, roughness: 0, side: THREE.DoubleSide })
