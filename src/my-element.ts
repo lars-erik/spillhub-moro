@@ -5,6 +5,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js'
 import { EXRLoader } from 'three/addons/loaders/EXRLoader.js'
+import { FontLoader } from 'three/addons/loaders/FontLoader.js'
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js'
 
 @customElement('my-element')
 export class MyElement extends LitElement {
@@ -38,10 +40,27 @@ export class MyElement extends LitElement {
     })
 
     const camera = new THREE.PerspectiveCamera(45, w / h, 0.01, 100)
-    camera.position.set(0, 0, 2)
+    camera.position.set(2, 0, 0)
 
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enableDamping = true
+
+    new FontLoader().load('/Science%20Gothic%20SemiBold_Regular.json', (font) => {
+      const geo = new TextGeometry('spillhub', {
+        font,
+        size: 0.18,
+        depth: 0.05,
+        bevelEnabled: true,
+        bevelThickness: 0.008,
+        bevelSize: 0.005,
+      })
+      geo.computeBoundingBox()
+      geo.translate(-(geo.boundingBox!.max.x - geo.boundingBox!.min.x) / 2, 0, 0)
+      const mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ metalness: 1, roughness: 0 }))
+      mesh.position.y = -0.65
+      mesh.rotation.y = Math.PI / 2
+      scene.add(mesh)
+    })
 
     await MeshoptDecoder.ready
     const loader = new GLTFLoader()
